@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="">
+<!--    [1] 전체 학생 조회-->
+    <select id="">
+    SELECT id,name,email,address FROM student ORDER BY DESC
+    </select>
+
+<!--    [2] 개인 학생 조회-->
+    <select id="">
+    SELECT id, name, email, address FROM student WHERE id=#{param1}
+    </select>
+
+<!--    [3] 학생 등록-->
+    <insert id="">
+    INSERT INTO student(name, email, address)
+    VALUES (#{param1}, #{param2}, #{param3})
+    </insert>
+
+<!--    [4] 학생 정보 수정-->
+    <update id="">
+    UPDATE student SET name=#{param2}, email=#{param3}, address=#{param4} WHERE id-#{param1}
+    </update>
+
+<!--    [5] 학생 정보 삭제-->
+    <delete id="">
+    DELETE FROM student WHERE id=#{param1}
+
+    </delete>
+
+
+</mapper>
