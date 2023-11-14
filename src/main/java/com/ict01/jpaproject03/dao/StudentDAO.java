@@ -8,19 +8,24 @@ import java.util.List;
 @Mapper
 public interface StudentDAO {
 
-  // [1] 전체 학생 정보 조회
-  public List<StudentDTO> listStudent();
+  // [1] 전체 학생 정보 조회 (Read ==> SELECT * FROM Table_name;)
+  public List<StudentDTO> listStudents();
 
-  // [2] 한 한생 조회
-  StudentDTO getStudent(int id);
+  // [2] 개인 학생 정보 조회 (READ ==> SELECT * FROM Table_name WHERE id ...)
+  public StudentDTO getStudent(int id);
 
-  // [3] 학생 정보 등록
+
+  // [3] 학생 정보 등록 ( Create ==> INSERT )
 
   public int saveStudent(String name, String email, String address);
 
-  // [4] 학생 정보 수정
+  // [4] 학생 정보 수정 ( Update ==> UPDATE )
+  public int updateStudent(int id, String name, String email, String address);
+
 
   // [5] 학생 정보 삭제
+  public int deleteStudent(String id);
+
 
 
 }
