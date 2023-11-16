@@ -3,6 +3,7 @@ package com.ict01.jpaproject03.controller;
 import com.ict01.jpaproject03.dao.StudentDAO;
 import com.ict01.jpaproject03.dto.StudentDTO;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +15,9 @@ import java.util.List;
 @RequiredArgsConstructor
 public class StudentController {
 
-
+  // (1) Field Injection
+  @Autowired
+  private StudentDAO studentDAO;
 //  Constructor Dependency Injection (Spring Framework)
 //  Dependency Injection
 //  private final StudentDAO studentDAO;
@@ -25,7 +28,7 @@ public class StudentController {
 
 
   // Lombok
-  private final StudentDAO studentDAO;
+ // private final StudentDAO studentDAO;
 
   // [1] 전체 학생 정보 목록 출력
   @GetMapping("/lists")
