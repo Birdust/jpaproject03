@@ -15,20 +15,22 @@ import java.util.List;
 @RequiredArgsConstructor
 public class StudentController {
 
-  // (1) Field Injection
-  @Autowired
-  private StudentDAO studentDAO;
+  // (1) Field Injection (X) / (3) Setter Injection (X)
+//  @Autowired
+// private StudentDAO studentDAO;
 //  Constructor Dependency Injection (Spring Framework)
 //  Dependency Injection
 //  private final StudentDAO studentDAO;
 
+  // (2) Constructor Dependency Injection (Spring Framework)
+//  private final StudentDAO studentDAO;
 //  public StudentController(StudentDAO studentDAO) {
 //    this.studentDAO = studentDAO;
 //  }
 
 
   // Lombok
- // private final StudentDAO studentDAO;
+  private final StudentDAO studentDAO;
 
   // [1] 전체 학생 정보 목록 출력
   @GetMapping("/lists")
